@@ -3060,7 +3060,7 @@ input, select, textarea {
 		}
 
 			.spotlights > section > .content > .inner {
-				-moz-transform: translateX(0) translateY(0);
+				-moz-transform: translateX(0) translateY(0); 
 				-webkit-transform: translateX(0) translateY(0);
 				-ms-transform: translateX(0) translateY(0);
 				transform: translateX(0) translateY(0);
@@ -3225,6 +3225,7 @@ input, select, textarea {
 					padding: 4em 4em 2em 4em ;
 				}
 
+			
 			}
 
 			@media screen and (max-width: 1280px) {
@@ -3878,6 +3879,15 @@ input, select, textarea {
 			transform: translateY(2em);
 			opacity: 0;
 		}
+	
+		 /*로그인 버튼*/
+		 a#loginbutton {
+			
+			position: fixed;
+			bottom: 25px;
+			margin-left: 25px;
+		
+		}
 
 		@media screen and (max-width: 1280px) {
 
@@ -3908,10 +3918,12 @@ input, select, textarea {
 				}
 
 				a#loginbutton {
+					bottom: 0;
 					position: fixed;
 					right: 5px;
 					margin: 5px;
 				}
+				
 				#sidebar nav {
 					height: inherit;
 					line-height: inherit;
@@ -3948,11 +3960,17 @@ input, select, textarea {
 
 		}
 
+		 @media screen and (max-width: 800px ){
+		a#loginbutton {
+			display: none;
+	
+		}  
 		@media screen and (max-width: 736px) {
 
 			#sidebar {
 				display: none;
 			}
+		
 
 		}
 
@@ -3993,3 +4011,4 @@ input, select, textarea {
 			}
 
 		}
+	}
