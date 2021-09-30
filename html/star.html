@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1조 프로젝트</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../css/10-10.css" />
+    <script type="text/javascript" src="../js/10-10.js"></script>
+</head>
+
+<body>
+
+
+
+    <header id="header">
+        <div class="wrap_group">
+            <div>
+                <a href="#">
+                    <h1>IPSA</h1>
+                </a>
+            </div>
+            <!-- <div class="navbar_menu">
+                <ul class="top_navbar">
+                    <div class="navbar_item" style="display: inline-block;"
+                        onclick="location.href='serviceoffice_IPAS_01.html'"><a href="#">종로점</a></div>
+                    <div class="navbar_item" style="display: inline-block; background-color:rgb(99, 126, 62);"
+                        onclick="location.href='serviceoffice_IPAS_02.html'"><a href="#">강남점</a></div>
+                    <div class="navbar_item" style="display: inline-block;"
+                        onclick="location.href='serviceoffice_IPAS_03.html'"><a href="#">구로점</a></div>
+                </ul>
+            </div> -->
+            <div>
+                <a href="#">My Page</a>
+            </div>
+        </div>
+    </header>
+    <div class="wrap">
+
+        <h1>Review</h1>
+        <p class="title_star">"IPSA"를 이용해 주셔서 감사합니다.</p>
+        <form name="reviewform" class="reviewform" method="post" action="/save">
+            <input type="hidden" name="rate" id="rate" value="0" />
+
+
+            <div class="review_rating rating_point">
+                <div class="warning_msg">별점을 선택해 주세요.</div>
+                <div class="rating">
+                    <div class="ratefill"></div>
+                    <!-- [D] 해당 별점이 선택될 때 그 점수 이하의 input엘리먼트에 checked 클래스 추가 -->
+                    <input type="checkbox" name="rating" id="rating1" value="1" class="rate_radio" title="1점">
+                    <label for="rating1"></label>
+                    <input type="checkbox" name="rating" id="rating2" value="2" class="rate_radio" title="2점">
+                    <label for="rating2"></label>
+                    <input type="checkbox" name="rating" id="rating3" value="3" class="rate_radio" title="3점">
+                    <label for="rating3"></label>
+                    <input type="checkbox" name="rating" id="rating4" value="4" class="rate_radio" title="4점">
+                    <label for="rating4"></label>
+                    <input type="checkbox" name="rating" id="rating5" value="5" class="rate_radio" title="5점">
+                    <label for="rating5"></label>
+                </div>
+            </div>
+            <div class="review_contents">
+                <div class="warning_msg">5자 이상의 리뷰 내용을 작성해 주세요.</div>
+                <textarea rows="10" class="review_textarea" placeholder="입력해주세요."></textarea>
+            </div>
+            <div class="cmd">
+                <input type="button" name="save" id="save" value="등록" class="btn btn-outline-success">
+            </div>
+        </form>
+    </div>
+
+
+    <footer class="footer" style="padding-bottom: 0px;">
+        <div class="row">
+            <div class="col-md-3 info-big">
+                <a href="https://www.naver.com/">
+                    <img src="../img/ipsa_1조.png" style="height: 150px;">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h2><strong>We support your success</strong></h2>
+                <p></p>
+                <p style="font-size: large;">Office IPSA where you can focus on your work. We provide the best work
+                    environment.
+                    Join us to go higher. It will be the most wonderful experience of your life. thank you.</p>
+            </div>
+            <div class="col-md-3" style="text-align: left; font-size: 
+            medium;">
+                <p><strong>IPSA(주) | 대표자 : 양승인</strong></p>
+                <p>
+                    사업자등록번호 : 123-4567-89<br>
+                    서울특별시 강남구 역삼동 819-3 삼오빌딩 5층<br>
+                    강남점 | 구로점 | 종로점<br>
+                    전화 : 02-333-4445<br>
+                    이메일 : hhm12345@naver.com
+                </p>
+            </div>
+    </footer>
+
+    <script type="text/javascript"
+        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ffa4adaea0c31b28cc337e80b18fadf8"></script>
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(37.499458017983244, 127.02905520777234), // 지도의 중심좌표
+                level: 4 // 지도의 확대 레벨
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        var imageSrc = 'https://cdn1.iconfinder.com/data/icons/basic-ui-elements-coloricon/21/06_1-512.png', // 마커이미지의 주소입니다    
+            imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+            imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+            markerPosition = new kakao.maps.LatLng(37.499458017983244, 127.02905520777234); // 마커가 표시될 위치입니다
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition,
+            image: markerImage // 마커이미지 설정 
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+
+        // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        var content = '<div class="customoverlay">' +
+            '  <a href="http://kko.to/m_aRlUr4H" target="_blank">' +
+            '    <span class="title">공유오피스(IPSA)</span>' +
+            '  </a>' +
+            '</div>';
+
+        // 커스텀 오버레이가 표시될 위치입니다 
+        var position = new kakao.maps.LatLng(37.499458017983244, 127.02905520777234);
+
+        // 커스텀 오버레이를 생성합니다
+        var customOverlay = new kakao.maps.CustomOverlay({
+            map: map,
+            position: position,
+            content: content,
+            yAnchor: 1
+        });
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

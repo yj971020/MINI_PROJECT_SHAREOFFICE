@@ -33,7 +33,8 @@ a {
     max-width: 525px;
     min-height: 750px;
     position: relative;
-   /* background: url('/images/pic01.jpg') no-repeat center;*/
+   background: url('../../images/pic01.jpg') no-repeat center;
+   background-size: cover;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
 }
 
@@ -41,7 +42,7 @@ a {
     width: 100%;
     height: 100%;
     position: absolute;
-    padding: 90px 70px 50px 70px;
+    padding: 50px 70px 50px 70px;
     background-color: #9ab771; /*배경색*/
     opacity:0.8;
 }
